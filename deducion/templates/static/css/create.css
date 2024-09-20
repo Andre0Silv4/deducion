@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,600;1,900&display=swap');
+:root {
+    --backgroud-color: #9671b0;
+    --first-led: #f41eed;
+    --second-led: #a407f8;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--backgroud-color);
+}
+
+.container {
+    position: relative;
+    width: 520px;
+    height: 580px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(28, 26, 58);
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 140%;
+    background: linear-gradient(var(--first-led), var(--second-led));
+    animation: animate 4s linear infinite;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    background-color: var(--backgroud-color);
+    border-radius: 6px;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+    padding: 15px;
+}
+
+#box {
+    z-index: 10;
+    background-color: rgb(28, 26, 58);
+    border-radius: 6px;
+    height: 99%;
+    width: 98%;
+    color: white;
+    padding: 10px;
+}
+
+.informacoes {
+    padding: 15px;
+}
+
+.config-placeholder {
+    display: flex;
+    text-indent: 5px;
+    font-size: 13px;
+    width: 300px;
+    height: 25px;
+    margin-left: 80px;
+    margin-top: 13px;
+    margin-bottom: 8px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+.ident-name {
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-left: 80px;
+}
+.termos {
+    width: 5%;
+    margin-left: 90px;
+}

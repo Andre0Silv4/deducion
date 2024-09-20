@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,600;1,900&display=swap');
+:root {
+    --backgroud-color: #cdb6dd;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--backgroud-color);
+}
+
+.container {
+    position: relative;
+    width: 300px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(28, 26, 58);
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 140%;
+    background: linear-gradient(#fc0202, #04ec36);
+    animation: animate 4s linear infinite;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background-color: var(--backgroud-color);
+    border-radius: 6px;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#box {
+    z-index: 10;
+    background-color: rgb(28, 26, 58);
+    border-radius: 6px;
+    height: 99%;
+    width: 98%;
+    color: white;
+    padding: 10px;
+}
+
+.informacoes {
+    padding: 15px;
+}
+
+.usuario {
+    text-indent: 2px;
+    font-size: 17;
+    width: 250px;
+    height: 25px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.new-senha {
+    box-sizing: border-box;
+    width: 10px;
+}
+
+#senha {
+    text-indent: 2px;
+    text-transform: capitalize;
+    font-size: 15px;
+    width: 250px;
+    height: 25px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+#senha2 {
+    text-indent: 2px;
+    text-transform: capitalize;
+    font-size: 15px;
+    width: 250px;
+    height: 25px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/resets.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Tela de Login</title>
+</head>
+
+<body>
+    <img src="../static/img/mulher/top1.png" alt="Mulher de biquini branco" class="women">
+    <div class="ring">  
+        <i class="linha-1"></i>
+        <i class="linha-2"></i>
+        <i class="linha-3"></i>
+        <div class="login">
+            <h2>Login</h2>
+            <form method="post">
+                Username: <input type="text" name="username"><br>
+                Password: <input type="password" name="password"><br>
+                <input type="submit" value="Login">
+            </form>
+            <div class="links">
+                <a href="#" class="hover-line">Forget Password</a>
+                <a href="{{ url_for('user_create') }}">Register here</a>
+            </div>
+        </div>
+    </div>
+    <!-- <img src="./img/mulher/teste.avif" alt="" class="man"> -->
+</body>
+
+</html>

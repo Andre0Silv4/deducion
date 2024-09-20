@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/resets.css') }}">
+  <title>List of Products</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style-Ecommerce.css') }}">
+</head>
+
+<body class="color-primary">
+  <nav class="barra-de-navegacao">
+    <h1>nome do site</h1>
+    <ul class="navbar">
+      <li class="home">Home</li>
+      <li class="home">Teste 1</li>
+      <li class="home">Teste 2</li>
+      <li class="home">Teste 3</li>
+    </ul>
+  </nav>
+
+  <h2>List of Products</h2>
+  <div class="container">
+    <div class="slider-container">
+      <span onclick="slideRight()" class="btn"></span>
+      <div class="slider">
+        {% for product in products %}
+        <div class="slide">
+          <div class="card">
+            <div class="card-content">
+              <h3 class="card-title">NAME: {{ product.name }}</h3>
+              <img src="{{ url_for('static', filename=product.image_path) }}" alt="{{ product.name }}" class="card-img">
+              <p class="card-price">PREÇO: R${{ product.price }}</p>
+              <p class="card-id">ID: {{ product.id }}</p>
+              <p class="card-description">DESCRIÇÃO: {{ product.description }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <span onclick="slideLeft()" class="btn"></span>
+    </div>
+
+    <div class="content">
+      <div class="filter-and-items">
+        <div class="sidebar">
+          <h2>Filtrar</h2>
+          <h3>Tamanho</h3>
+          <label><input type="checkbox" class="filter tamanho" value="pequeno"> Pequeno</label><br>
+          <label><input type="checkbox" class="filter tamanho" value="medio"> Médio</label><br>
+          <label><input type="checkbox" class="filter tamanho" value="grande"> Grande</label>
+          <h3>Cor</h3>
+          <label><input type="checkbox" class="filter cor" value="verde"> Verde </label><br>
+          <label><input type="checkbox" class="filter cor" value="vermelho"> Vermelho </label><br>
+          <label><input type="checkbox" class="filter cor" value="azul"> Azul </label>
+          <h3>Preço</h3>
+          <label for="priceRange">Preço máximo: R$<span id="priceValue">100</span></label>
+          <input type="range" id="priceRange" name="priceRange" min="0" max="1000" value="100" step="10">
+        </div>
+
+        <div class="sideBar-content">
+          {% for product in products %}
+          <div class="item {{ product.size }} {{ product.color }}">
+            <div class="card-item-checkbox">
+              <h2>{{ product.name }}</h2>
+              <img src="{{ url_for('static', filename=product.image_path) }}" alt="{{ product.name }}" class="item-img">
+              <p class="item-price">R${{ product.price }}</p>
+              <p class="item-id">{{ product.id }}</p>
+              <p class="item-description">{{ product.description }}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <a href="{{ url_for('upload_file') }}" class="novoProduto">Add New Product</a>
+
+    <footer class="rodape">
+      <img src="{{ url_for('static', filename='img/whats-teste-2.svg') }}" alt="Icone do whatsapp" class="whatsapp-icon">
+      <p class="whatsapp">21403897</p>
+      <img src="{{ url_for('static', filename='img/email-teste.svg') }}" alt="Icone de Email" class="email-icon">
+      <p class="email">aspdokpasdok@outlook.com</p>
+      <img src="{{ url_for('static', filename='img/insta-teste-2.svg') }}" alt="Icone do instagram" class="insta-icon">
+      <p class="instagram">padsoksapok</p>
+    </footer>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,600;1,900&display=swap');
+:root {
+    --backgroud-color: #cdb6dd;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--backgroud-color);
+}
+
+.container {
+    position: relative;
+    width: 300px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(28, 26, 58);
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 140%;
+    background: linear-gradient(#09ecfc, #FF1493);
+    animation: animate 4s linear infinite;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background-color: var(--backgroud-color);
+    border-radius: 6px;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+#box {
+    z-index: 10;
+    background-color: rgb(28, 26, 58);
+    border-radius: 6px;
+    height: 99%;
+    width: 98%;
+    color: white;
+    padding: 10px;
+}
+h1 {
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 900;
+    font-size: 35px;
+    margin-top: 150px;
+}
+h2 {
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+}

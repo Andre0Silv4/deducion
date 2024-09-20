@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/css/resets.css">
+    <link rel="stylesheet" href="./static/css/create.css">
+    <title>Register</title>
+</head>
+
+<body>
+    <section class="container">
+        <div id="box">
+            <h1>Register</h1>
+            <form method="post">
+                <div class="informacoes">
+                    <label for="user" class="ident-name">Username:</label>
+                    <input type="text" class="config-placeholder" name="username"><br>
+                    <label for="usuario" class="ident-name">Email:</label>
+                    <input type="email" class="config-placeholder" name="email"><br>
+                    <label for="senha" class="ident-name">Password:</label>
+                    <input type="password" class="config-placeholder" name="password"><br>
+                    <input type="submit" value="Register">
+                </div>
+            </form>
+            <a href="{{ url_for('login') }}">Already have an account? Login here</a>
+        </div>
+    </section>
+</body>
+
+</html>
